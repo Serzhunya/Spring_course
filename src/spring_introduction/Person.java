@@ -1,14 +1,24 @@
 package spring_introduction;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component("personBean")
+//@Scope("singletone")
 public class Person {
     private Pet pet;
     private String lastname;
     private int age;
 
+//    @Autowired
     public Person() {
-        System.out.println("i create new Person");
+        System.out.println("I create Person");
     }
 
+    @Autowired
+    @Qualifier("catBean")
     public void setPet(Pet pet) {
         this.pet = pet;
     }

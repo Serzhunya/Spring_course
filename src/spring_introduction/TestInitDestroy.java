@@ -2,11 +2,11 @@ package spring_introduction;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Test4 {
+public class TestInitDestroy {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext3.xml");
-        Person person = context.getBean("personBean", Person.class);
-        person.sayHelloMyPet();
+        Dog dog = context.getBean("dogBean", Dog.class);
+        dog.say();
         context.close();
     }
 }
