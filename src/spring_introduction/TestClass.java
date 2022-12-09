@@ -8,5 +8,8 @@ public class TestClass {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
         Person person = context.getBean("personBean", Person.class);
         person.sayHelloMyPet();
+        person.getLastname();
+        person.getAge();
+        context.close();
     }
 }
