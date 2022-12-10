@@ -16,7 +16,7 @@ public class MusicPlayer {
 
 
     @Autowired
-    @Qualifier("rockBean")
+    @Qualifier("jassBean")
     public void setGenre(Genre genre) {
         this.genre = genre;
     }
@@ -29,6 +29,11 @@ public class MusicPlayer {
     public String getLang() {
         System.out.println(lang);
         return lang;
+    }
+
+    public void setLang(String lang, int numberOfLanguage) {
+        System.out.println(lang);
+        System.out.println(numberOfLanguage);
     }
 
     public Genre getGenre() {
