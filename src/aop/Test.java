@@ -7,7 +7,9 @@ public class Test {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
         MusicPlayer player = context.getBean("musicPlayerBean", MusicPlayer.class);
 //        player.sayGenre();
+        Song song = context.getBean("song", Song.class);
         player.setLang("Java", 3);
+        player.addSong(song);
 //        player.getGenre();
         context.close();
     }

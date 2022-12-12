@@ -36,6 +36,11 @@ public class MusicPlayer {
         System.out.println(numberOfLanguage);
     }
 
+    public void addSong(Song song) {
+        System.out.println("Добавляем песню" + song.name);
+        System.out.println("Добавляем песню" + song.year);
+    }
+
     public Genre getGenre() {
         return genre;
     }
