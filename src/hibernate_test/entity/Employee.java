@@ -1,5 +1,6 @@
 package hibernate_test.entity;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
