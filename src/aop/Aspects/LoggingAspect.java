@@ -27,6 +27,7 @@ public class LoggingAspect {
         System.out.println(args.length);
         if(args[0] instanceof Song) {
             System.out.println(((Song) args[0]).getName());
+            System.out.println(((Song) args[0]).getYear());
         }
     }
 

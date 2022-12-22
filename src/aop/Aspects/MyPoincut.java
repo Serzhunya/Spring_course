@@ -8,7 +8,6 @@ import org.aspectj.lang.reflect.MethodSignature;
 public class MyPoincut {
     @Pointcut ("execution(* add* (..))")
     public void patternForSetMethods(){
-
     }
 
 }
