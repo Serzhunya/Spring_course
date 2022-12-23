@@ -5,18 +5,20 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class Test2 {
+import java.util.List;
+
+public class Test3 {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Employee.class).buildSessionFactory();
         try{
             Session session = factory.getCurrentSession();
-            Employee emp = new Employee("Diana", "Astra", "IT", 700);
             session.beginTransaction();
-            session.persist(emp);
-            int myId = emp.getId();
-            Employee employee = session.get(Employee.class, myId);
+            List <Employee> emps = session.createQuery("from Employee").getResultList();
+            for (Employee e: emps) {
+                System.out.println(e);
+            }
+
             session.getTransaction().commit();
-            System.out.println(employee);
         } finally {
             factory.close();
         }
